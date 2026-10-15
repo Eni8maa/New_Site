@@ -1,1 +1,80 @@
-#Don't_worry_about_it
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Another red night</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #000000; }
+        .map-node {
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            color: white;
+            z-index: 10;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+        }
+        .map-node:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+        .locked {
+            background-color: #a0a0a0;
+            cursor: not-allowed;
+            opacity: 0.6;
+            transform: none !important;
+        }
+        .completed {
+            background-color: #10b981; /* Emerald 500 */
+        }
+        .current {
+            background-color: #3b82f6; /* Blue 500 */
+            animation: bounce-pulse 1.5s infinite;
+        }
+        @keyframes bounce-pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(59, 130, 246, 0.3); }
+        }
+        /* Responsiveness for nodes on the map */
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 800px; /* Definiera en fast höjd för kartan */
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden; /* För att dölja noder som hamnar utanför vid mindre skärmar */
+        }
+
+        .lesson-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+        }
+        .path {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 5;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+
+    <div id="app" class="p-4 sm:p-8">
+        <h1 class="text-4xl font-extrabold text-[#00FF41] text-center mb-2">Another red night</h1> <br> <br>
+        <p class="text-center text-[#00FF41] mb-5">You step out of your car in the raw slimey rain sighing softly. An other perk of his very odd line of occupation. <br>
+        James Miller, is 34 unhinged and mostly an not so social guy. Except his friends at his favorite bar, the gun range or at work he usually just usually stayed at home. <br>
+        </p>
+    </div>
+</body>
+</html>
